@@ -1,0 +1,27 @@
+<html>
+<head>
+</head>
+<body>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style1.css') }}"/>
+<div class="form-style-10">
+<div class="section">
+{% block content %}
+    {% if is_poisonous %}
+		<div>
+            <h1>DON'T EAT!</h1><br>
+            <img src="{{ url_for('static', filename='image/mushroom.jpg') }}">
+            <p>It is poisonous for <strong>{{prob}}%</strong></p>
+        </div>
+    {% else %}
+        <div>
+            <h1>You can EAT!</h1><br>
+            <img src="{{ url_for('static', filename='image/tasty_mushroom.jpeg') }}">
+            <p>It is edible for <strong>{{prob}}%</strong></p>
+        </div>
+{% endif %}
+{% endblock content %}
+    <a href="/train"><input type="button" id="train" name="train" value="BACK"></a>
+</div>
+</div>
+</body>
+</html>

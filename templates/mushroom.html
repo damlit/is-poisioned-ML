@@ -1,0 +1,386 @@
+<html>
+<head>
+</head>
+<body>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style1.css') }}"/>
+<div class="form-style-10">
+<div class="section">
+Train AI:<br>
+ <a href="/train"><input type="button" id="train" name="train" value="TRAIN"></a>
+ <br>
+{% block content %}
+    {% if trained %}
+		<div><label for="train"> TRAINED </label></div>
+{% endif %}
+{% endblock content %}
+</div>
+
+
+ <form action="/results">
+  <div class="section">
+   1. Cap shape: <br>
+  </div>
+  <div class="inner-wrap">
+  <input type="radio" id="1_b" name="cap-shape" value="b">
+  <label for="1_b">Bell</label>
+  <input type="radio" id="1_c" name="cap-shape" value="c">
+  <label for="1_c">Conical</label>
+  <input type="radio" id="1_x" name="cap-shape" value="x">
+  <label for="1_x">Convex</label>
+  <input type="radio" id="1_f" name="cap-shape" value="f">
+  <label for="1_f">Flat</label>
+  <input type="radio" id="1_k" name="cap-shape" value="k">
+  <label for="1_k">Knobbed</label>
+  <input type="radio" id="1_s" name="cap-shape" value="s">
+  <label for="1_s">Sunken</label>
+  </div>
+  <div class="section">
+   2. Cap surface:<br>
+  </div>
+  <div class="inner-wrap">
+  <input type="radio" id="2_f" name="cap-surface" value="n">
+  <label for="2_f">Fibrous</label>
+  <input type="radio" id="2_g" name="cap-surface" value="g">
+  <label for="2_g">Grooves</label>
+  <input type="radio" id="2_y" name="cap-surface" value="y">
+  <label for="2_y">Scaly</label>
+  <input type="radio" id="2_s" name="cap-surface" value="s">
+  <label for="2_s">Smooth</label>
+  </div>
+  <div class="section">
+   3. Cap color:<br>
+  </div>
+  <div class="inner-wrap">
+  <input type="radio" id="3_n" name="cap-color" value="n">
+  <label for="3_n">Brown</label>
+  <input type="radio" id="3_b" name="cap-color" value="b">
+  <label for="3_b">Buff</label>
+  <input type="radio" id="3_c" name="cap-color" value="c">
+  <label for="3_c">Cinnamon</label>
+  <input type="radio" id="3_g" name="cap-color" value="g">
+  <label for="3_g">Gray</label>
+  <input type="radio" id="3_r" name="cap-color" value="r">
+  <label for="3_r">Green</label>
+  <input type="radio" id="3_p" name="cap-color" value="p">
+  <label for="3_p">Pink</label>
+  <input type="radio" id="3_u" name="cap-color" value="u">
+  <label for="3_u">Purple</label>
+  <input type="radio" id="3_e" name="cap-color" value="e">
+  <label for="3_e">Red</label>
+  <input type="radio" id="3_w" name="cap-color" value="w">
+  <label for="3_w">White</label>
+  <input type="radio" id="3_y" name="cap-color" value="y">
+  <label for="3_y">Yellow</label>
+  </div>
+  <div class="section">
+   4. Bruises:<br>
+  </div>
+  <div class="inner-wrap">
+  <input type="radio" id="4_t" name="bruises" value="t">
+  <label for="4_t">Bruises</label>
+  <input type="radio" id="4_f" name="bruises" value="f">
+  <label for="4_f">No</label>
+  </div>
+  <div class="section">
+   5. Odor:<br>
+  </div>
+  <div class="inner-wrap">
+  <input type="radio" id="5_a" name="odor" value="a">
+  <label for="5_a">Almond</label>
+  <input type="radio" id="5_l" name="odor" value="l">
+  <label for="5_l">Anise</label>
+  <input type="radio" id="5_c" name="odor" value="c">
+  <label for="5_c">Creosote</label>
+  <input type="radio" id="5_y" name="odor" value="y">
+  <label for="5_y">Fishy</label>
+  <input type="radio" id="5_f" name="odor" value="f">
+  <label for="5_f">Foul</label>
+  <input type="radio" id="5_m" name="odor" value="m">
+  <label for="5_m">Musty</label>
+  <input type="radio" id="5_n" name="odor" value="n">
+  <label for="5_n">None</label>
+  <input type="radio" id="5_p" name="odor" value="p">
+  <label for="5_p">Pungent</label>
+  <input type="radio" id="5_s" name="odor" value="s">
+  <label for="5_s">Spicy</label>
+  </div>
+  <div class="section">
+   6. Gill attachment:<br>
+  </div>
+  <div class="inner-wrap">
+  <input type="radio" id="6_a" name="gill-attachment" value="a">
+  <label for="6_a">Attached</label>
+  <input type="radio" id="6_d" name="gill-attachment" value="d">
+  <label for="6_d">Descending</label>
+  <input type="radio" id="6_f" name="gill-attachment" value="f">
+  <label for="6_f">Free</label>
+  <input type="radio" id="6_n" name="gill-attachment" value="n">
+  <label for="6_n">Notched</label>
+  </div>
+  <div class="section">
+   7. Gill spacing:<br>
+  </div>
+  <div class="inner-wrap">
+  <input type="radio" id="7_c" name="gill-spacing" value="c">
+  <label for="7_c">Close</label>
+  <input type="radio" id="7_w" name="gill-spacing" value="w">
+  <label for="7_w">Crowded</label>
+  <input type="radio" id="7_d" name="gill-spacing" value="d">
+  <label for="7_d">Distant</label>
+  </div>
+  <div class="section">
+   8. Gill size:<br>
+  </div>
+  <div class="inner-wrap">
+  <input type="radio" id="8_b" name="gill-size" value="b">
+  <label for="8_b">Broad</label>
+  <input type="radio" id="8_n" name="gill-size" value="n">
+  <label for="8_n">Narrow</label>
+  </div>
+  <div class="section">
+   9. Gill color:<br>
+  </div>
+  <div class="inner-wrap">
+  <input type="radio" id="9_k" name="gill-color" value="k">
+  <label for="9_k">Black</label>
+  <input type="radio" id="9_n" name="gill-color" value="n">
+  <label for="9_n">Brown</label>
+  <input type="radio" id="9_b" name="gill-color" value="b">
+  <label for="9_b">Buff</label>
+  <input type="radio" id="9_h" name="gill-color" value="h">
+  <label for="9_h">Chocolate</label>
+  <input type="radio" id="9_g" name="gill-color" value="g">
+  <label for="9_g">Gray</label>
+  <input type="radio" id="9_r" name="gill-color" value="r">
+  <label for="9_r">Green</label>  
+  <input type="radio" id="9_o" name="gill-color" value="o">
+  <label for="9_o">Orange</label>
+  <input type="radio" id="9_p" name="gill-color" value="p">
+  <label for="9_p">Pink</label>
+  <input type="radio" id="9_u" name="gill-color" value="u">
+  <label for="9_u">Purple</label>
+  <input type="radio" id="9_e" name="gill-color" value="e">
+  <label for="9_e">Red</label>
+  <input type="radio" id="9_w" name="gill-color" value="w">
+  <label for="9_w">White</label>
+  <input type="radio" id="9_y" name="gill-color" value="y">
+  <label for="9_y">Yellow</label>
+  </div>
+  <div class="section">
+   10. Stalk shape:<br>
+  </div>
+  <div class="inner-wrap">
+  <input type="radio" id="10_e" name="stalk-shape" value="e">
+  <label for="10_e">Enlarging</label>
+  <input type="radio" id="10_t" name="stalk-shape" value="t">
+  <label for="10_t">Tapering</label>
+  </div>
+  <div class="section">
+   11. Stalk root:<br>
+  </div>
+  <div class="inner-wrap">
+  <input type="radio" id="11_b" name="stalk-root" value="b">
+  <label for="11_b">Bulbous</label>
+  <input type="radio" id="11_c" name="stalk-root" value="c">
+  <label for="11_c">Club</label>
+  <input type="radio" id="11_u" name="stalk-root" value="u">
+  <label for="11_u">Cup</label>
+  <input type="radio" id="11_e" name="stalk-root" value="e">
+  <label for="11_e">Equal</label>
+  <input type="radio" id="11_z" name="stalk-rootg" value="z">
+  <label for="11_z">Rhizomorphs</label>
+  <input type="radio" id="11_r" name="stalk-root" value="r">
+  <label for="11_r">Rooted</label>
+  <input type="radio" id="11_?" name="stalk-root" value="?">
+  <label for="11_?">Missing</label>
+  </div>
+  <div class="section">
+   12. Stalk surface above ring:<br>
+  </div>
+  <div class="inner-wrap">
+  <input type="radio" id="12_f" name="stalk-surface-above-ring" value="f">
+  <label for="12_f">Fibrous</label>
+  <input type="radio" id="12_y" name="stalk-surface-above-ring" value="y">
+  <label for="12_y">Scaly</label>
+  <input type="radio" id="12_k" name="stalk-surface-above-ring" value="k">
+  <label for="12_k">Silky</label>
+  <input type="radio" id="12_s" name="stalk-surface-above-ring" value="s">
+  <label for="12_s">Smooth</label>
+  </div>
+  <div class="section">
+   13. Stalk surface below ring:<br>
+  </div>
+  <div class="inner-wrap">
+  <input type="radio" id="13_f" name="stalk-surface-below-ring" value="f">
+  <label for="13_f">Fibrous</label>
+  <input type="radio" id="13_y" name="stalk-surface-below-ring" value="y">
+  <label for="13_y">Scaly</label>
+  <input type="radio" id="13_k" name="stalk-surface-below-ring" value="k">
+  <label for="13_k">Silky</label>
+  <input type="radio" id="13_s" name="stalk-surface-below-ring" value="s">
+  <label for="13_s">Smooth</label>
+  </div>
+  <div class="section">
+   14. Stalk color above ring:<br>
+  </div>
+  <div class="inner-wrap">
+  <input type="radio" id="14_n" name="stalk-color-above-ring" value="n">
+  <label for="14_n">Brown</label>
+  <input type="radio" id="14_b" name="stalk-color-above-ring" value="b">
+  <label for="14_b">Buff</label>
+  <input type="radio" id="14_c" name="stalk-color-above-ring" value="c">
+  <label for="14_c">Cinnamon</label>
+  <input type="radio" id="14_g" name="stalk-color-above-ring" value="g">
+  <label for="14_g">Gray</label>
+  <input type="radio" id="14_o" name="stalk-color-above-ring" value="o">
+  <label for="14_o">Orange</label>
+  <input type="radio" id="14_p" name="stalk-color-above-ring" value="p">
+  <label for="14_p">Pink</label>
+  <input type="radio" id="14_e" name="stalk-color-above-ring" value="e">
+  <label for="14_e">Red</label>
+  <input type="radio" id="14_w" name="stalk-color-above-ring" value="w">
+  <label for="14_w">White</label>
+  <input type="radio" id="14_y" name="stalk-color-above-ring" value="y">
+  <label for="14_w">Yellow</label>
+  </div>
+  <div class="section">
+   15. Stalk color below ring:<br>
+  </div>
+  <div class="inner-wrap">
+  <input type="radio" id="15_n" name="stalk-color-below-ring" value="n">
+  <label for="15_n">Brown</label>
+  <input type="radio" id="15_b" name="stalk-color-below-ring" value="b">
+  <label for="15_b">Buff</label>
+  <input type="radio" id="15_c" name="stalk-color-below-ring" value="c">
+  <label for="15_c">Cinnamon</label>
+  <input type="radio" id="15_g" name="stalk-color-below-ring" value="g">
+  <label for="15_g">Gray</label>
+  <input type="radio" id="15_o" name="stalk-color-below-ring" value="o">
+  <label for="15_o">Orange</label>
+  <input type="radio" id="15_p" name="stalk-color-below-ring" value="p">
+  <label for="15_p">Pink</label>
+  <input type="radio" id="15_e" name="stalk-color-below-ring" value="e">
+  <label for="15_e">Red</label>
+  <input type="radio" id="15_w" name="stalk-color-below-ring" value="w">
+  <label for="15_w">White</label>
+  <input type="radio" id="15_y" name="stalk-color-below-ring" value="y">
+  <label for="15_w">Yellow</label>
+  </div>
+  <div class="section">
+   16. Veil type:<br>
+  </div>
+  <div class="inner-wrap">
+  <input type="radio" id="16_p" name="veil-type" value="p">
+  <label for="16_p">Partial</label>
+  <input type="radio" id="16_u" name="veil-type" value="u">
+  <label for="16_u">Universal</label>
+  </div>
+  <div class="section">
+   17. Veil color:<br>
+  </div>
+  <div class="inner-wrap">
+  <input type="radio" id="17_n" name="veil-color" value="n">
+  <label for="17_n">Brown</label>
+  <input type="radio" id="17_o" name="veil-color" value="o">
+  <label for="17_o">Orange</label>
+  <input type="radio" id="17_w" name="veil-color" value="w">
+  <label for="17_w">White</label>
+  <input type="radio" id="17_y" name="veil-color" value="y">
+  <label for="17_y">Yellow</label>
+  </div>
+  <div class="section">
+   18. Ring number:<br>
+  </div>
+  <div class="inner-wrap">
+  <input type="radio" id="18_n" name="ring-number" value="n">
+  <label for="18_n">None</label>
+  <input type="radio" id="18_o" name="ring-number" value="o">
+  <label for="18_o">One</label>
+  <input type="radio" id="18_t" name="ring-number" value="t">
+  <label for="18_t">Two</label>
+  </div>
+  <div class="section">
+   19. Ring type:<br>
+  </div>
+  <div class="inner-wrap">
+  <input type="radio" id="19_c" name="ring-type" value="c">
+  <label for="19_c">Cobwebby</label>
+  <input type="radio" id="19_e" name="ring-type" value="e">
+  <label for="19_e">Evanescent</label>
+  <input type="radio" id="19_f" name="ring-type" value="f">
+  <label for="19_f">Flaring</label>
+  <input type="radio" id="19_l" name="ring-type" value="l">
+  <label for="19_l">Large</label>
+  <input type="radio" id="19_n" name="ring-type" value="n">
+  <label for="19_n">None</label>
+  <input type="radio" id="19_p" name="ring-type" value="p">
+  <label for="19_p">Pendant</label>
+  <input type="radio" id="19_s" name="ring-type" value="s">
+  <label for="19_s">Sheathing</label>
+  <input type="radio" id="19_z" name="ring-type" value="z">
+  <label for="19_z">Zone</label>
+  </div>
+  <div class="section">
+   20. Spore print color:<br>
+  </div>
+  <div class="inner-wrap">
+  <input type="radio" id="20_k" name="spore-print-color" value="k">
+  <label for="20_k">Black</label>
+  <input type="radio" id="20_n" name="spore-print-color" value="n">
+  <label for="20_n">Brown</label>
+  <input type="radio" id="20_b" name="spore-print-color" value="b">
+  <label for="20_b">Buff</label>
+  <input type="radio" id="20_h" name="spore-print-color" value="h">
+  <label for="20_h">Chocolate</label>
+  <input type="radio" id="20_r" name="spore-print-color" value="r">
+  <label for="20_r">Green</label>
+  <input type="radio" id="20_o" name="spore-print-color" value="o">
+  <label for="20_o">Orange</label>
+  <input type="radio" id="20_u" name="spore-print-color" value="u">
+  <label for="20_u">Purple</label>
+  <input type="radio" id="20_w" name="spore-print-color" value="w">
+  <label for="20_w">White</label>
+  <input type="radio" id="20_y" name="spore-print-color" value="y">
+  <label for="20_y">Yellow</label>
+  </div>
+  <div class="section">
+   21. Population:<br>
+  </div>
+  <div class="inner-wrap">
+  <input type="radio" id="21_a" name="population" value="a">
+  <label for="21_a">Abundant</label>
+  <input type="radio" id="21_c" name="population" value="c">
+  <label for="21_c">Clustered</label>
+  <input type="radio" id="21_n" name="population" value="n">
+  <label for="21_n">Numerous</label>
+  <input type="radio" id="21_s" name="population" value="s">
+  <label for="21_s">Scattered</label>
+  <input type="radio" id="21_v" name="population" value="v">
+  <label for="21_v">Several</label>
+  <input type="radio" id="21_y" name="population" value="y">
+  <label for="21_y">Solitary</label>
+  </div>
+  <div class="section">
+   22. Habitat:<br>
+  </div>
+  <div class="inner-wrap">
+  <input type="radio" id="22_g" name="habitat" value="g">
+  <label for="22_g">Grasses</label>
+  <input type="radio" id="22_l" name="habitat" value="l">
+  <label for="22_l">Leaves</label>
+  <input type="radio" id="22_m" name="habitat" value="m">
+  <label for="22_m">Meadows</label>
+  <input type="radio" id="22_p" name="habitat" value="p">
+  <label for="22_p">Paths</label>
+  <input type="radio" id="22_u" name="habitat" value="u">
+  <label for="22_u">Urban</label>
+  <input type="radio" id="22_w" name="habitat" value="w">
+  <label for="22_w">Waste</label>
+  <input type="radio" id="22_d" name="habitat" value="d">
+  <label for="22_d">Woods</label>
+  </div>
+  <input type="submit" value="is poisioned??">
+</form>
+</div>
+</body>
+</html>
